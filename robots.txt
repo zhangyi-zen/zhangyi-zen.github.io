@@ -1,0 +1,4 @@
+﻿User-agent: *
+Disallow:
+
+Sitemap: https://zhangyi-zen.github.io/sitemap.xml

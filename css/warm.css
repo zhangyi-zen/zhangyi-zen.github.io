@@ -1,0 +1,147 @@
+/* A restrained warm palette layered over Tranquilpeak. */
+:root {
+  --warm-paper: #fcfaf6;
+  --warm-paper-deep: #f7f1e8;
+  --warm-ink: #433c35;
+  --warm-heading: #38322d;
+  --warm-muted: #918579;
+  --warm-border: #e8ded2;
+  --warm-accent: #ad6544;
+  --warm-accent-hover: #85482f;
+  --warm-code: #f2ebe2;
+}
+
+body,
+#main {
+  background-color: var(--warm-paper);
+  background-image: url("../images/zen-wave-paper.webp");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+  background-attachment: fixed;
+  color: var(--warm-ink);
+}
+
+/* Keep the pattern at the edges, but give long-form reading a quiet paper layer. */
+.post {
+  position: relative;
+}
+
+.post::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: min(860px, calc(100% - 32px));
+  transform: translateX(-50%);
+  background: rgba(252, 250, 246, 0.91);
+  border-right: 1px solid rgba(232, 222, 210, 0.55);
+  border-left: 1px solid rgba(232, 222, 210, 0.55);
+}
+
+.post > * {
+  position: relative;
+  z-index: 1;
+}
+
+.postShorten-group {
+  background: rgba(252, 250, 246, 0.91);
+  border-right: 1px solid rgba(232, 222, 210, 0.55);
+  border-left: 1px solid rgba(232, 222, 210, 0.55);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post .post-header .post-title,
+.postShorten .postShorten-header .postShorten-title,
+.archive .archive-title,
+.archive .archive-posts .archive-post .archive-post-title {
+  color: var(--warm-heading);
+}
+
+a,
+a:active,
+a:visited,
+.postShorten .postShorten-excerpt_link {
+  color: var(--warm-accent);
+}
+
+a:hover,
+.postShorten .postShorten-excerpt_link:hover {
+  color: var(--warm-accent-hover);
+}
+
+.post .post-content,
+.postShorten .postShorten-excerpt,
+.postShorten .postShorten-content {
+  color: var(--warm-ink);
+}
+
+.post .post-meta,
+.post .post-meta a,
+.postShorten .postShorten-meta,
+.postShorten .postShorten-meta a,
+.postShorten .postShorten-readingtime,
+.archive .archive-posts .archive-post .archive-post-date,
+.pagination-bar .pagination .pagination-number,
+#footer {
+  color: var(--warm-muted);
+}
+
+.postShorten-group .postShorten,
+.post .post-footer-tags,
+hr {
+  border-color: var(--warm-border);
+}
+
+code,
+table tr:nth-child(even) {
+  background-color: var(--warm-code);
+}
+
+pre,
+figure.highlight,
+.codeblock {
+  border-color: var(--warm-border);
+}
+
+blockquote {
+  border-left-color: var(--warm-accent);
+  color: #665c53;
+}
+
+#header,
+#bottom-bar,
+#about #about-card {
+  background-color: var(--warm-paper);
+  border-color: var(--warm-border);
+}
+
+#header,
+#header .header-title .header-title-link,
+#header .header-right-icon,
+#header .header-right-picture {
+  color: var(--warm-muted);
+}
+
+#header .header-title .header-title-link:hover {
+  color: var(--warm-accent-hover);
+}
+
+a.tag--default,
+.tag--default {
+  background-color: var(--warm-paper-deep);
+  border-color: var(--warm-muted);
+  color: #6f6257;
+}
+
+::selection {
+  background: #e4c7b3;
+  color: #2f2925;
+}
